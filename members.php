@@ -16,13 +16,13 @@ else
         $mysql_hostname = 'localhost';
 
         /*** mysql username ***/
-        $mysql_username = 'admin';
+        $mysql_username = 'root';
 
         /*** mysql password ***/
-        $mysql_password = 'password';
+        $mysql_password = '';
 
         /*** database name ***/
-        $mysql_dbname = 'users';
+        $mysql_dbname = 'userList';
 
 
         /*** select the users name from the database ***/
@@ -33,7 +33,7 @@ else
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         /*** prepare the insert ***/
-        $stmt = $dbh->prepare("SELECT username FROM loginlist 
+        $stmt = $dbh->prepare("SELECT username FROM loginData 
         WHERE id = :id");
 
         /*** bind the parameters ***/

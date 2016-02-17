@@ -49,13 +49,13 @@ else
     $mysql_hostname = 'localhost';
 
     /*** mysql username ***/
-    $mysql_username = 'admin';
+    $mysql_username = 'root';
 
     /*** mysql password ***/
-    $mysql_password = 'admin';
+    $mysql_password = '';
 
     /*** database name ***/
-    $mysql_dbname = 'users';
+    $mysql_dbname = 'userList';
 
     try
     {
@@ -66,7 +66,7 @@ else
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         /*** prepare the select statement ***/
-        $stmt = $dbh->prepare("SELECT id, username, password FROM loginlist 
+        $stmt = $dbh->prepare("SELECT id, username, password FROM loginData 
                     WHERE username = :username AND password = :password");
 
         /*** bind the parameters ***/
@@ -100,7 +100,7 @@ else
     catch(Exception $e)
     {
         /*** if we are here, something has gone wrong with the database ***/
-        $message = 'We are unable to process your request. Please try again later"';
+        $message = 'We are unable to process your request. Please try again later';
     }
 }
 ?>

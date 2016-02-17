@@ -49,13 +49,13 @@ else
     $mysql_hostname = 'localhost';
 
     /*** mysql username ***/
-    $mysql_username = 'admin';
+    $mysql_username = 'root';
 
     /*** mysql password ***/
-    $mysql_password = 'admin';
+    $mysql_password = '';
 
     /*** database name ***/
-    $mysql_dbname = 'users';
+    $mysql_dbname = 'userList';
 
     try
     {
@@ -66,7 +66,7 @@ else
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         /*** prepare the insert ***/
-        $stmt = $dbh->prepare("INSERT INTO logininfo (username, password ) VALUES (:username, :password )");
+        $stmt = $dbh->prepare("INSERT INTO loginData (username, password ) VALUES (:username, :password )");
 
         /*** bind the parameters ***/
         $stmt->bindParam(':username', $username, PDO::PARAM_STR);
@@ -80,7 +80,7 @@ else
 
         /*** if all is done, say thanks ***/
         $message = 'New user added';
-        header("location:members.php")
+        header("location:members.php");
     }
     catch(Exception $e)
     {
