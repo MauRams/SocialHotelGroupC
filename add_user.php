@@ -46,16 +46,16 @@ else
     
     /*** connect to database ***/
     /*** mysql hostname ***/
-    $mysql_hostname = 'localhost';
+    $mysql_hostname = 'sql2.freemysqlhosting.net';
 
     /*** mysql username ***/
-    $mysql_username = 'root';
+    $mysql_username = 'sql2107364';
 
     /*** mysql password ***/
-    $mysql_password = '';
+    $mysql_password = 'dZ2*wT7%';
 
     /*** database name ***/
-    $mysql_dbname = 'userList';
+    $mysql_dbname = 'sql2107364';
 
     try
     {
